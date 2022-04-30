@@ -1,0 +1,30 @@
+;kimden kime agirlik
+
+(define harita
+  (list (list 1 2 1)
+      (list 1 3 1)
+      (list 2 3 2)
+      (list 3 2 2)
+      (list 2 4 2)
+      (list 2 7 1)
+      (list 3 5 3))
+  )
+;bir dügümden gidilebilecek alternatiflerin listesi
+;dügüm numaralari ve agirliklari ile döndürür
+
+(define (alt alist dugum) (if(empty? alist)
+                             alist
+                             (if(=dugum (first (first alist)))
+                                        (cons (rest (first alist))
+                                        (alt (rest alist) dugum)
+                                        )
+                                )
+                             )
+  )
+;7 den gidilebilecek fonksiyonlar
+
+(alt harita 7)
+
+                             
+                             
+  
