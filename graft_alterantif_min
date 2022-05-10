@@ -10,30 +10,40 @@
    )
 )
 
+(define (karsilastir alt1 alt2) (if (empty? alt2)
+                                    alt1
+                                 (if (> (first (rest alt1))(first (rest alt2)) )
+                                     alt2
+                                     alt1)
+                                 )
+  )
+
 ;alternatiflerden minumunu bulan fonksiyon
 
 (define (min-alt alist) (if (empty? alist)  ;hala listede eleman varsa
                              alist
                              (karsilastir (first alist)
                                           (min-alt (rest alist))))
+  )
                                           
 (min-alt (list (list 3 2) (list 4 2) (list 7 1) (list 9 11) (list 8 -1)))
-
 (min-alt (alt harita 2))
+
 (define (ucs alist baslangic bitis)
    (if (empty? alist)
            alist
            (cons baslangic
            (if (empty? (alt alist baslangic))            ; gidebilecegimiz dügüm varsa
                 null
-                (if  (=bitis (first (min-alt (alt alist baslangic)))    ;aradigimiz dügümü bulduysak
+                (if  (=bitis (first (min-alt (alt alist baslangic))))    ;aradigimiz dügümü bulduysak
                 (min_alt (alt alist baslangic))
                 
-                 (ucs alist (first (min-alt (alt alist baslangic))) bitis)
+                 (ucs alist (first
+                             (min-alt (alt alist baslangic))) bitis)
                  )
+                )
             )
             ))
+  
 ;1 den basla 5 e git
 (ucs harita 1 5)
-            
-                 
