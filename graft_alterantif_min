@@ -12,7 +12,7 @@
 
 ;alternatiflerden minumunu bulan fonksiyon
 
-(define (min-alt alist) (if (empty? alist)
+(define (min-alt alist) (if (empty? alist)  ;hala listede eleman varsa
                              alist
                              (karsilastir (first alist)
                                           (min-alt (rest alist))))
@@ -24,9 +24,15 @@
    (if (empty? alist)
            alist
            (cons baslangic
-                 (ucs alist (first (min-alt (alt alist baslangic))) bitis))
+           (if (empty? (alt alist baslangic))            ; gidebilecegimiz dügüm varsa
+                null
+                (if  (=bitis (min-alt (alt alist baslangic)))    ;aradigimiz dügümü bulduysak
+                (min_alt (alt alist baslangic))
+                
+                 (ucs alist (first (min-alt (alt alist baslangic))) bitis)
                  )
             )
+            ))
 ;1 den basla 5 e git
 (ucs harita 1 5)
             
