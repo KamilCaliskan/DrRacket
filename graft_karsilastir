@@ -1,0 +1,21 @@
+;iki alternatiften ucuz olani döndürür
+(karsilartir harita 2)
+(karsilastir (list 3 2) (list 4 2))
+(define (karsilastir alt1 alt2) (if (empty? alt2)
+                                     alt1
+                                 (if (> (first (rest alt1)) (first (rest alt2)) )
+                                     alt2
+                                     alt1
+                                     )
+                                     
+              )
+                              
+ (karsilastir (list 3 7) (list 4 1))
+(define (min-alt alist) (if (empty? alist)
+                            alist
+                            (karsilastir (first alist)
+                            (min-alt (rest alist)))))
+
+(define (ucs alist baslangic bitis) null)
+                                     
+                                 
