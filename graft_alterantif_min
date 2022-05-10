@@ -26,7 +26,7 @@
            (cons baslangic
            (if (empty? (alt alist baslangic))            ; gidebilecegimiz dügüm varsa
                 null
-                (if  (=bitis (min-alt (alt alist baslangic)))    ;aradigimiz dügümü bulduysak
+                (if  (=bitis (first (min-alt (alt alist baslangic)))    ;aradigimiz dügümü bulduysak
                 (min_alt (alt alist baslangic))
                 
                  (ucs alist (first (min-alt (alt alist baslangic))) bitis)
