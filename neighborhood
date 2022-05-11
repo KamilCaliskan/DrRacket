@@ -1,5 +1,5 @@
 
-(define harita (list (list 1 3)
+(define kenarlar (list (list 1 3)
                      (list 1 2)
                      (list 3 2)
                      (list 3 4)
