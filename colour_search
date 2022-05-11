@@ -1,0 +1,17 @@
+(define dügümler (list 1 2 3 4))
+
+
+(define renkler (list 1 2 3)
+  )
+(define cözüm (list (list 1 1)
+                    (list 2 2)
+                    (list 3 3)
+                    (list 4 1)
+                    )
+  )
+  
+  
+(define (renk d c)(if (empty? c) null
+                      (if (= (birinci c) d)(ikinci c)
+                          (renk d (rest c)))))
+(renk 3 cözüm)
