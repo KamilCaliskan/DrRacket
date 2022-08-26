@@ -1,0 +1,21 @@
+;node left right
+(define myTree
+  (list 53
+        (list 23
+              (list 11 '() '())
+              (list 4 '()  '())
+              )
+        (list 17 '() '())
+        ))
+;function to define root of tree
+(define (root tree) (first tree))
+;function to find left node of tree
+(define (left tree)(first (rest tree)))
+;find right node of tree
+(define (right tree)(first (rest (rest tree))))
+
+(define (count atree)(if (empty? atree) 0
+                         (+(count (left atree))
+                           (count (right atree))
+                           1)))
+(count (left myTree))
