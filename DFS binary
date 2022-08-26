@@ -18,4 +18,17 @@
                          (+(count (left atree))
                            (count (right atree))
                            1)))
-(count (left myTree))
+(count (right myTree))
+
+(define (DFS atree anode)(if (empty? atree) 0
+                             (if (>( DFS (left atree) anode) 0)
+                                 (DFS (left atree) anode)
+                                 (if (>(DFS (right atree) anode) 0)
+                                     (DFS (right atree) anode)
+                                     (if (= anode (root atree)) (count atree)
+                                         0)))))
+(DFS myTree 4)
+(DFS myTree 441)
+(DFS myTree 24)
+(DFS myTree 23)
+(DFS myTree 11)
