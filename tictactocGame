@@ -1,0 +1,23 @@
+(define tahta (list (list 1 0 1)
+              (list 0 -1 0)
+              (list -1 0 1)))
+
+(first (list 1 2 3))
+(second (list 1 2 3))
+(third (list 1 2 3))
+
+(define (t alist) (first (rest (rest alist))))
+
+(= 1 1 1)
+(= 1 0 1)
+
+
+(define (satirKontrol satir) (if (=(first satir) (second satir)(third satir))
+                                 (first satir)
+                                 0
+                                 ))
+
+(satirKontrol (first tahta))
+
+                   
+  
